@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Assignment 1 | Page 2</title>
+</head>
+
+<body>
+    <header>
+        <h1>HTML Learning</h1>
+
+        <nav>
+            <a class="nav_element">Home</a>
+            <a class="nav_element">About Us</a>
+            <a class="nav_element">Support</a>
+            <a class="nav_element">Gallery</a>
+            <a class="nav_element">Contact Us</a>
+        </nav>
+
+        <hr>
+    </header>
+    <h1>Playing HTML Table</h1>
+    <hr>
+
+    <section style="padding-bottom: 32px; margin: 48px 0px;">
+        <!-- first table -->
+        <table style="width: 750px;">
+            <tr>
+                <th colspan="3">Grocery Items Bill</th>
+
+            </tr>
+            <tr class="heading">
+                <td>Item Name</td>
+                <td>Quantity</td>
+                <td>Price</td>
+            </tr>
+            <tr>
+                <td>Potatoes</td>
+                <td>50</td>
+                <td>NRS. 500.00</td>
+            </tr>
+            <tr>
+                <td>Nuts and other stuff</td>
+                <td>100</td>
+                <td>NRS. 1400.00</td>
+            </tr>
+            <tr>
+                <td>Greens and Red Onions</td>
+                <td>30</td>
+                <td>NRS. 2500.00</td>
+            </tr>
+            <tr>
+                <td colspan="2">Total Price: </td>
+                <td>NRS. 3400.00 </td>
+            </tr>
+        </table>
+
+        <!-- second table -->
+        <br><br><br>
+
+
+        <table style="width: 750px;">
+            <tr>
+                <th colspan="3">Seminar</th>
+
+            </tr>
+            <tr class="heading">
+                <td>Day</td>
+                <td colspan="2">Schedule</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Monday</td>
+                <td>07:00AM</td>
+                <td>11:00AM</td>
+            </tr>
+            <tr>
+                <!-- <td>Nuts and other stuff</td> -->
+                <td>4:00PM</td>
+                <td>08:00PM</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Tuesday</td>
+                <td>06:00AM</td>
+                <td>10:00AM</td>
+            </tr>
+            <tr>
+                <td>3:00PM</td>
+                <td>11:00PM</td>
+            </tr>
+        </table>
+
+    </section>
+    <hr>
+
+    <button onclick="openModal()"
+        style=" padding: 18px; background-color: #5c4c4c; border: none; color: white; width: 200px; margin: 42px 0px;">
+        Click Me!
+    </button>
+
+    <div id="myModal" style="display: none;">
+        <p>Hello</p>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+
+    <footer>
+        <hr>
+
+        <h3 style="font-weight: lighter">© Copyright. End of my first project</h3>
+    </footer>
+
+
+</body>
+
+</html>

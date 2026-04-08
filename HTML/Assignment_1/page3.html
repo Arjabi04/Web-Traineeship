@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1 | Page 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>HTML Learning</h1>
+
+        <nav>
+            <a class="nav_element">Home</a>
+            <a class="nav_element">About Us</a>
+            <a class="nav_element">Support</a>
+            <a class="nav_element">Gallery</a>
+            <a class="nav_element">Contact Us</a>
+        </nav>
+
+        <hr>
+
+        <h1>HTML Forms</h1>
+        <hr>
+    </header>
+
+    <section>
+
+
+        <div style="font-family: 'Times New Roman', Times, serif;">
+            <br>
+            <h2>Zoo Keer Application Form</h2>
+            <p><i>
+                    Please complete the form. Mandatory fields are marked with a <span style="color: red;">*</span>
+                </i></p>
+
+            <fieldset>
+                <legend>CONTACT DETAILS</legend>
+                <div class="page3-form-row">
+                    <label for="name">Name <span class="red_text">*</span></label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="page3-form-row">
+                    <label for="telno">Telephone</label>
+                    <input type="number" id="telno" name="telno">
+                </div>
+
+                <div class="page3-form-row">
+                    <label for="email">Email <span class="red_text">*</span></label>
+                    <input type="email" id="email" name="email">
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+
+                <legend>PERSONAL INFORMATION</legend>
+
+                <div class="page3-form-row">
+                    <label for="age"><span class="red_text">*</span>Age</label>
+                    <input type="number" id="age" name="age">
+                </div>
+
+                <div class="page3-form-row">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <!-- stretch added so that text area is the same height as the label -->
+                <div class="page3-form-row" style="align-items: stretch;">
+                    <label for="email">When did you first know you wanted to be a zoo-keeper?</label>
+                    <textarea style="width: 240px"></textarea>
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>PICK YOUR FAVORITE ANIMALS</legend>
+                <div style="
+                    display: grid;
+                    grid-template-columns: auto auto auto auto;
+                    gap: 10px;
+                    ">
+                    <div><input type="radio"> Zebra</div>
+                    <div><input type="radio"> Cat</div>
+
+                    <div><input type="radio"> Anaconda</div>
+                    <div><input type="radio"> Human</div>
+                    <div><input type="radio"> Elephant</div>
+                    <div><input type="radio"> Wildebeest</div>
+
+                    <div><input type="radio"> Pigeon</div>
+                    <div><input type="radio"> Crab</div>
+                </div>
+
+            </fieldset>
+        </div>
+        <!-- <br> -->
+        <button
+            style="background-color: #39466E; color: white; padding: 10px 18px; border: 0px; margin: 24px 0px;">Submit
+            Application</button>
+        <hr>
+
+    </section>
+
+    <section>
+        <h2>Personal Details</h2>
+        <div class="page3-form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="page3-form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="page3-form-row">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location">
+        </div>
+
+        <div class="page3-form-row">
+            <label for="personal-choice-gender" style="font-weight: bold;">Gender</label>
+            <div class="gender-choice" style="display: flex ; align-items: center;">
+                <input type="radio" id="gender-choice-male">Male &nbsp;
+                <input type="radio" id="gender-choice-female">Female
+            </div>
+        </div>
+
+        <div class="page3-form-row">
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" name="birthday">
+        </div>
+
+        <div class="page3-form-row">
+            <label for="country">Country</label>
+            <select name="country" id="country">
+                <option value="Nepal">Select country</option>
+                <option value="Nepal">Nepal</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="China">China</option>
+            </select>
+            <br>
+        </div>
+
+        <div class="page3-form-row">
+            <label for="other-info">Other Information</label>
+            <textarea></textarea>
+
+        </div>
+
+        <div class="page3-form-row">
+
+            <div class="checkbox-content">
+                <input type="checkbox" id="newsletter" style="margin-right:16px"> I want to receive the newsletter
+            </div>
+
+            <button class="button-content">Submit</button>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <hr>
+        <h3 style="font-weight: lighter">© Copyright. End of my first project</h3>
+    </footer>
+
+</body>
+
+</html>
