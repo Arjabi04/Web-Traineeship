@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <style>
+        body {
+            font-weight: 600;
+            font-family: 'Inter';
+            font-size: 22px;
+            margin: 0px;
+            /* margin: 0px 120px */
+            margin: 0 10vw;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-areas:
+                "header header header"
+                "left nav right"
+                "left main right"
+                "footer footer footer";
+            gap: 20px;
+            column-gap: 30px;
+        }
+
+        @media (max-width:1000px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-areas:
+                    "header header header"
+                    "nav nav nav"
+                    "left main main"
+                    "footer footer right";
+            }
+        }
+
+        @media (max-width:800px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "right"
+                    "left"
+                    "footer";
+            }
+        }
+
+        .header {
+            background-color: #3A3A3A;
+            color: white;
+            padding: 32px;
+        }
+
+        .nav {
+            background-color: #E5DCE9;
+            height: 50px;
+            padding: 14px;
+
+        }
+
+        .sidebar-left {
+            background-color: #E8E8E8;
+            /* margin-right: 10px; */
+            padding: 32px;
+        }
+
+        .sidebar-right {
+            background-color: #755E7B;
+            color: white;
+            padding: 32px;
+            /* margin-left: 10px; */
+
+        }
+
+        .main {
+            background-color: #D9D9D9;
+            height: 855px;
+        }
+
+        .footer {
+            background-color: #170b0b;
+            color: white;
+            padding: 32px;
+        }
+
+        .header,
+        .nav,
+        .sidebar-left,
+        .sidebar-right,
+        .main,
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <header class="header" style="grid-area: header;">
+            Header
+        </header>
+
+        <nav class="nav" style="grid-area:nav;">Navigation</nav>
+
+        <div class="sidebar-left" style="grid-area:left;">SideBar Left</div>
+
+        <main class="main" style="grid-area:main;">Main</main>
+
+        <div class="sidebar-right" style="grid-area:right;">SideBar Right</div>
+
+        <footer class="footer" style="grid-area:footer;">Footer</footer>
+    </div>
+</body>
+
+</html>
