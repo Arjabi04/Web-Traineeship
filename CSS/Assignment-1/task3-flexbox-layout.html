@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+    <style>
+        body {
+            font-weight: 700;
+            font-family: 'Inter';
+            font-size: 20px;
+            margin: 0px;
+            margin: 10vw 10vw;
+        }
+
+        .image-box {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .image-box img {
+            width: 60%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .text-box h1 {
+            font-size: 40px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .text-box p {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .bottom-container .image-box {
+            flex-direction: row-reverse;
+        }
+
+        .top-container {
+
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                margin: 0px;
+            }
+
+            .image-box {
+                flex-direction: column !important;
+                gap: 10px;
+                /* Stack vertical */
+            }
+
+            .image-box img {
+                width: 100%;
+                order: 2;
+                /* Moves image below text */
+            }
+
+            .text-box {
+                padding: 25px;
+            }
+
+            .text-box h1 {
+                font-size: 25px;
+            }
+
+            .text-box p {
+                font-size: 18px;
+            }
+
+            .text-box {
+                order: 1;
+                /* Moves text to the top */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="top-container">
+        <div class="image-box">
+            <img src="images/image1.jpg" alt="Picture of garden with a gate">
+            <div class="text-box">
+                <h1>Far far away, behind the word mountains</h1>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+            </div>
+        </div>
+    </section>
+    <section class="bottom-container">
+        <div class="image-box">
+            <img src="images/image2.jpg" alt="Picture of beach">
+            <div class="text-box">
+                <h1>Far far away, behind the word mountains</h1>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

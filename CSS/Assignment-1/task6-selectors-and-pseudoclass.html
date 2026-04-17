@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            background-color: lightblue;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        button:hover {
+            background: rgb(16, 104, 133);
+            color: white;
+        }
+
+        button:active {
+            background: rgb(212, 106, 106);
+        }
+
+        input:focus {
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgb(219, 169, 169);
+            color: white;
+            outline: none;
+        }
+
+        .list li:nth-child(2) {
+            color: blue;
+        }
+
+        .list li:first-child {
+            font-weight: bold;
+        }
+
+        .list li:last-child {
+            color: red;
+        }
+
+        .list li:not(:first-child) {
+            background: #f2f2f2;
+        }
+
+        :is(h2, button) {
+            color: rgb(98, 43, 150);
+        }
+
+        :where(.list li) {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>CSS Pseudo-Classes Demo</h2>
+
+    <div class="buttons">
+        <button>Button</button>
+    </div>
+    <br>
+
+    <div class="form">
+        <input type="text" placeholder="Click to focus">
+    </div>
+
+    <!-- List -->
+    <ul class="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+</body>
+
+</html>

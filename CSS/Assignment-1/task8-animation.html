@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8 </title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .shape {
+            width: 120px;
+            height: 120px;
+            background-color: #f3aae8;
+            animation: morph 2.5s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0% {
+                border-radius: 0%;
+                transform: rotate(0deg) scale(1);
+                background-color: #f3aae8;
+                ;
+            }
+
+            25% {
+                border-radius: 100%;
+                /* transfrom to circle */
+                transform: translateY(-100px) rotate(0deg) scale(0.6);
+                /* move up */
+                background-color: #bde3ca;
+            }
+
+            50% {
+                /* turning back to square */
+                border-radius: 0%;
+            }
+
+            75% {
+                /* spins anticlockwise */
+                transform: translateY(0) rotate(-360deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(-360deg);
+                background-color: #f3aae8;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shape"></div>
+</body>
+
+</html>

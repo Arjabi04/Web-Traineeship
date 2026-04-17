@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .container {
+            border: 2px solid black;
+            padding: 30px;
+            width: fit-content;
+            ;
+        }
+
+        /* Normal */
+        .normal {
+            background: green;
+        }
+
+
+
+        /* display: none */
+        .display {
+            display: none;
+        }
+
+        /* show display box on hover */
+        .container:hover .display {
+            display: block;
+            background: red;
+            color: white;
+            margin: 5px 0;
+        }
+
+        /*visibility: hidden */
+        .visibility {
+            visibility: hidden;
+        }
+
+        .container:hover .visibility {
+            visibility: visible;
+        }
+
+        /* Show transition using hover */
+        .opacity {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        .container:hover .opacity {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>CSS Visibility Comparison</h2>
+
+    <div class="container">
+        <div class="normal">Normal Box</div>
+
+        <div class="display">display: none</div>
+
+        <div class="visibility">visibility: hidden</div>
+
+        <div class="opacity">opacity: 0 </div>
+    </div>
+
+</body>
+
+</html>
