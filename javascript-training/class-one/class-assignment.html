@@ -9,21 +9,23 @@
 
 <body>
     <h1>Class Assignment 1</h1>
+    <p> task is to print numbers from 1 to 100, but replace multiples of 3 with "Fizz", multiples of 5 with "Buzz", and
+        multiples of both with "FizzBuzz".</p>
     <script>
         for (i = 0; i <= 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
+            if (i % 3 == 0 && i % 5 == 0) { //check if number is a multiple of 3 and 5
                 console.log("FizzBuzz");
                 continue;
             }
-            else if (i % 3 == 0) {
+            else if (i % 3 == 0) { //check if number is a multiple of 3
                 console.log("Fizz");
                 continue;
             }
-            else if (i % 5 == 0) {
+            else if (i % 5 == 0) { //check if number can is a multiple of 5
                 console.log("Buzz");
                 continue;
             }
-            else {
+            else { // print number if its not a multiple of 3 or 5 
                 console.log(i);
             }
 

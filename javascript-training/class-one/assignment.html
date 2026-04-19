@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 1 Assignment</title>
+</head>
+
+<body>
+    <h1> Assignment-1</h1>
+    <p>Analyze the following array using:<br>
+        a) For loop<br>
+        b) map(), filter(), and reduce():<br><br>
+        const nums = [5, 12, 8, 130, 44];<br><br>
+        <b>Find and output: </b><br>
+        Sum<br>
+        Average<br>
+        Largest number<br>
+        Smallest number<br>
+        Count of even numbers<br>
+        Numbers greater than the average
+    </p>
+
+    <script>
+        const nums = [5, 12, 8, 130, 44];
+        let sum = 0;
+        let i;
+        console.log(nums);
+        //  --for loop--
+
+        console.log("Using for loop:")
+        // sum
+        for (i = 0; i < nums.length; i++) {
+            sum += nums[i]; //adding up each element of the array
+        }
+        console.log("Sum: ", sum);
+
+        // average
+        let avg = 0;
+        avg = sum / nums.length;
+        console.log("Average: ", avg);
+
+        // largest and smallest number
+        let largestNumber = nums[0]; //assuming the 1st element of the array is the largest number 
+        let smallestNumber = nums[0]; //assuming the 1st element of the array is the smallest number 
+        for (i = 1; i < nums.length; i++) {
+            if (nums[i] > largestNumber) { //comparing with values in the array to see if there is a bigger number
+                largestNumber = nums[i]; //if true, assigning the larger number to the variable
+            }
+            if (nums[i] < smallestNumber) { //comparing with values in the array to see if there is a smaller number
+                smallestNumber = nums[i]; //if true, assigning the smaller number to the variable
+            }
+        }
+        console.log("Largest number: ", largestNumber);
+        console.log("Smallest number:", smallestNumber);
+
+        //  Count of even numbers
+        let evenCount = 0;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 === 0) { //checking if number is even
+                evenCount++;
+            }
+        }
+        console.log("Count of even numbers:", evenCount);
+
+        //Numbers greater than the average
+        let greaterThanAvg = [];
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] > avg) {
+                greaterThanAvg.push(nums[i]);
+            }
+        }
+        console.log("Numbers greater than average:", greaterThanAvg);
+
+        console.log(""); // for spacing
+
+        // --Using map(), filter(), and reduce()--
+        console.log("Using map(), filter(), and reduce():")
+
+        // sum
+        sumReduce = nums.reduce((total, currentValue) => total + currentValue, 0);
+        console.log("Sum using reduce: ", sumReduce);
+
+        // Average
+        let avgReduce = nums.reduce((acc, curr) => acc + curr, 0) / nums.length;
+        console.log("Average using reduce: ", avgReduce);
+
+        // Largest number
+        let largestNumberReduce = nums.reduce((acc, curr) => (curr > acc ? curr : acc));
+        console.log("Largest number using reduce: ", largestNumberReduce);
+
+        // Smallest number
+        let smallestNumberReduce = nums.reduce((acc, curr) => (curr < acc ? curr : acc));
+        console.log("Smallesst number using reduce: ", smallestNumberReduce);
+
+        // Count of even numbers
+        let evenCountFilter = nums.filter(num => num % 2 === 0).length;
+        console.log("Count of even number susing filter ", evenCountFilter);
+
+        // Numbers greater than the average
+        let greaterThanAvgFilter = nums.filter(num => num > avg);
+        console.log("Numbers greater than the average using filter", greaterThanAvgFilter)
+
+        // map() was not needed for these operations because none of the tasks required transforming the data.
+
+    </script>
+
+</body>
+
+</html>
