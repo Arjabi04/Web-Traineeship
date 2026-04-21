@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment 11</title>
+    <script src="https://kit.fontawesome.com/7893a16d5a.js" crossorigin="anonymous"></script>
+    <style>
+        .icons-div {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border: 1px solid black;
+            padding: 24px;
+            width: 50vw;
+            align-content: center;
+
+        }
+
+        .icons {
+            width: 32px;
+            height: 32px;
+            margin: 32px;
+
+        }
+
+        .tooltip-1 {
+            position: relative;
+
+        }
+
+        .tooltip-text-1 {
+            color: red;
+            border: 1px solid red;
+            padding: 10px;
+            box-shadow: 1px 1px 20px;
+            border-radius: 20px;
+            position: absolute;
+            /* width: fit-content; */
+            white-space: nowrap;
+            top: 60%;
+            margin-top: 30px;
+            transform: translateX(-60%);
+            background-color: white;
+            visibility: hidden;
+        }
+
+        .tooltip-text-1::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            border-width: 10px;
+            border-style: solid;
+
+            border-color: transparent transparent red;
+        }
+
+        .tooltip-2 {
+            position: relative;
+
+        }
+
+
+        .tooltip-text-2 {
+            color: blue;
+            border: 1px solid blue;
+            padding: 10px;
+            box-shadow: 1px 1px 20px;
+            border-radius: 20px;
+            position: absolute;
+            white-space: nowrap;
+            bottom: 90%;
+            transform: translateX(-60%);
+            background-color: white;
+
+            visibility: hidden;
+        }
+
+        .tooltip-text-2::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 40%;
+
+            border-width: 10px;
+            border-style: dotted;
+            border-color: blue transparent transparent;
+        }
+
+
+
+        .tooltip-3 {
+            position: relative;
+
+        }
+
+        .tooltip-text-3 {
+            color: orange;
+            border: 1px solid orange;
+            padding: 10px;
+            box-shadow: 1px 1px 20px;
+            border-radius: 20px;
+            position: absolute;
+            white-space: nowrap;
+            top: 60%;
+            margin-top: 20px;
+            transform: translateX(-90%);
+            background-color: white;
+            visibility: hidden;
+        }
+
+        .tooltip-text-3::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent orange;
+        }
+
+
+        .tooltip-1:hover .tooltip-text-1 {
+            visibility: visible;
+
+        }
+
+        .tooltip-2:hover .tooltip-text-2 {
+            visibility: visible;
+
+        }
+
+        .tooltip-3:hover .tooltip-text-3 {
+            visibility: visible;
+
+        }
+
+        .font-awesome-icon:hover {
+            color: red;
+        }
+
+        .svg-icon:hover {}
+    </style>
+
+</head>
+
+<body>
+    <h2 class="title">Assignment 2 - Hover over icons</h2>
+    <div class="icons-div">
+
+        <div class="tooltip-1">
+            <!-- from font awesome -->
+            <i class="fa-solid fa-circle-exclamation fa-2x font-awesome-icon"></i>
+            <!--  // Font Awesome uses relative sizing. so using fa-2x here(2em) which is 32px in height and width -->
+            <span class="tooltip-text-1">This is DANGER tooltip!</span>
+
+        </div>
+        <div class="tooltip-2">
+            <!-- from https://www.svgrepo.com/svg/457301/fingerprint -->
+            <img src="images/fingerprint.svg" class="icons svg-icon"
+                onmouseover="this.src = 'images/fingerprint-blue.svg'" onmouseout="this.src = 'images/fingerprint.svg'">
+            <span class="tooltip-text-2">This is DANG! oh no ☹ tooltip</span>
+        </div>
+
+
+        <!--  -->
+        <div class="tooltip-3">
+            <img src="images/cow.png" class="icons">
+            <span class="tooltip-text-3">This is COW tooltip</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

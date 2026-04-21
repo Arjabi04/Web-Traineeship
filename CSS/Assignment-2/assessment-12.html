@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 12</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans';
+            background: #f7f7f7;
+        }
+
+        .wrapper {
+            background: #efefef;
+            padding: 60px 40px;
+
+            /* default values for bars */
+            --users: 0%;
+            --storage: 0%;
+            --projects: 0%;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #777;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            padding-bottom: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 5px 10px 20px #b5b5b5
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .heading {
+            background: #7DD0ED;
+            color: white;
+            font-size: 28px;
+            padding: 18px;
+            font-weight: bold;
+        }
+
+        .card:hover .heading {
+            background-color: #27A6D2;
+        }
+
+
+
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .amount {
+            font-size: 60px;
+            color: #5F5F5F;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .per {
+            color: #5F5F5F;
+            padding-bottom: 30px;
+        }
+
+        .card:hover .amount {
+            color: #28A7D2;
+        }
+
+        .card:hover .per {
+            color: #28A7D2;
+
+        }
+
+        .features {
+            font-size: 13px;
+            color: #9A9A9A;
+            line-height: 2.5;
+        }
+
+        .bottom-box {
+            margin: 150px auto;
+            max-width: 1000px;
+            padding: 50px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .row {
+            margin-bottom: 45px;
+        }
+
+        .labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            color: #5F5F5F;
+            font-size: 30px;
+        }
+
+        .bar {
+            height: 20px;
+            background: #E9EDEF;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* bg border for bar */
+        .bar::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+            background: #7DD0ED;
+            transition: width 0.3s ease;
+        }
+
+        /* give values to variable */
+        .wrapper:has(.card:nth-child(1):hover) {
+            --users: 25%;
+            --storage: 10%;
+            --projects: 20%;
+        }
+
+        .wrapper:has(.card:nth-child(2):hover) {
+            --users: 20%;
+            --storage: 40%;
+            --projects: 10%;
+        }
+
+        .wrapper:has(.card:nth-child(3):hover) {
+            --users: 40%;
+            --storage: 55%;
+            --projects: 50%;
+        }
+
+        /* apply the variabes to the bar */
+        .row:nth-child(1) .bar::after {
+            width: var(--users);
+        }
+
+        .row:nth-child(2) .bar::after {
+            width: var(--storage);
+        }
+
+        .row:nth-child(3) .bar::after {
+            width: var(--projects);
+        }
+
+        /* for responsiveness*/
+        @media (max-width: 800px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- CARDS -->
+        <div class="container">
+
+            <div class="card">
+                <div class="heading">Basic</div>
+                <div class="content">
+                    <p class="amount">$5</p>
+                    <p class="per">per month</p>
+                    <p class="features">
+                        All features and resources<br>
+                        Additional support<br>
+                        50 Audio and video calls
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="heading">Pro</div>
+                <div class="content">
+                    <p class="amount">$10</p>
+                    <p class="per">per month</p>
+                    <p class="features">
+                        VAT Features<br>
+                        Mailing Address<br>
+                        150 Audio and video calls<br>
+                        Additional security features
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="heading">Premium</div>
+                <div class="content">
+                    <p class="amount">$20</p>
+                    <p class="per">per month</p>
+                    <p class="features">
+                        All features and resources<br>
+                        VAT and security features<br>
+                        Unlimited Audio and video calls
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bottom-box">
+
+            <div class="row">
+                <div class="labels">
+                    <span>5 Users</span>
+                    <span>100 Users</span>
+                </div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="row">
+                <div class="labels">
+                    <span>20 GB</span>
+                    <span>200 GB</span>
+                </div>
+                <div class="bar"></div>
+            </div>
+
+            <div class="row">
+                <div class="labels">
+                    <span>1 Project</span>
+                    <span>50 Projects</span>
+                </div>
+                <div class="bar"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
