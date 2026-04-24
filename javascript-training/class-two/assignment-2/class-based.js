@@ -5,7 +5,7 @@ import { displayCountdown, sleep } from "./app.js";
 
 
 export class DisplayUserInformation {
-    constructor({ name, age, address, city, ...rest }) {
+    constructor({ name = "Unknown", age = "Unknown", address = "Unknown", city = "Unknown", ...rest }) {
         this.name = name;
         this.age = age;
         this.address = address;
