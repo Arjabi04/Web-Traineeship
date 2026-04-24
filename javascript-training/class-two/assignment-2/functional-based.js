@@ -1,19 +1,27 @@
+import { displayCountdown, sleep } from "./app.js";
+
+
 // b)Functional based approach
-// const user1 = { name: "Harry", age: 24, address: "Jhamsikhel", city: "Lalitpur" };
-// const user2 = { name: "Ram", address: "Boudha", city: "Kathmandu" };
 
 // Create a function/method to display user information
-export const displayUserInformation = ({ name = "", age, address, city }) => {
-    console.log(`Name: ${name}\n Age:${age} \n Address:${address} \nCity:${city} `);
+export const displayUserInformation = ({ name = "Unknown", age = "Unknown", address = "Unknown", city = "Unknown", ...rest }) => {
+    console.log(`Name: ${name}\nAge:${age} \nAddress:${address} \nCity:${city} `);
+    for (const key in rest) {
+        console.log(`${key}: ${rest[key]}`);
+    }
 }
 
-// First show a countdown from 10 to 0 in the console (Should be dynamic, if no parameter is passed fallbacks to 1 second interval)
-
-export const displayCountdown = () => {
-
-}
-
+// Functional approach
 // After the countdown ends, console user1's information 
 // After 5 seconds, show user2's information
-// You must use the ES6 features: Template Literals, Object Destructuring, Default Parameters, Rest and Spread Operator
+export async function functionalApproachDisplayAll(user1, user2) {
+    try {
+        await displayCountdown(500); //countdow with .5 seconds interval
+        displayUserInformation({ ...user1 });
+        await sleep(5000);  //display users 2 info after 5 seconds
+        displayUserInformation({ ...user2 });  //display users 2 info after 5 seconds
+    } catch (error) {
+        console.error(error);
+    }
+}
 
