@@ -5,19 +5,7 @@
 // Clear the input field after adding
 // Update the item count
 // Show "Item added!" toast for 2 seconds
-
-export function updateCount() {
-    totalItemsText.innerText = `TOTAL ITEMS: ${itemCount}`;
-}
-
-export function showToast(text) {
-    toast.innerText = text;
-    toast.style.display = "block";
-
-    setTimeout(() => {
-        toast.style.display = "none";
-    }, 2000);
-}
+import { showToast, updateCount } from "./app.js";
 
 const itemInput = document.querySelector('.new-item-input input');
 const totalItemsText = document.querySelector('.container p');
