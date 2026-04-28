@@ -1,7 +1,11 @@
 import { welcomeWindow } from "./welcome-message.js";
 import { addItem } from "./add-items.js";
 
-export function updateCount() {
+const totalItemsText = document.querySelector('.container p');
+const toast = document.getElementById('toast');
+
+
+export function updateCount(itemCount) {
     totalItemsText.innerText = `TOTAL ITEMS: ${itemCount}`;
 }
 

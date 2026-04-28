@@ -7,13 +7,10 @@
 // Show "Item added!" toast for 2 seconds
 import { showToast, updateCount } from "./app.js";
 
-const itemInput = document.querySelector('.new-item-input input');
-const totalItemsText = document.querySelector('.container p');
-const toast = document.getElementById('toast');
 const allItemsWrapper = document.querySelector('.all-items');
+const itemInput = document.querySelector('.new-item-input input');
 
 let itemCount = 0;
-
 export function addItem() {
     //  Read and trim whitespace
     const text = itemInput.value.trim();
@@ -39,10 +36,10 @@ export function addItem() {
 
     // Clear the input field after adding
     itemInput.value = "";
-    // Update the item count
 
+    // Update the item count
     itemCount++;
-    updateCount();
+    updateCount(itemCount);
 
     // Show "Item added!" toast for 2 seconds
     showToast("Item Added!");
