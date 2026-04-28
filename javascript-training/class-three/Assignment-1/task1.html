@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 3 | Task 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7893a16d5a.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">'LIST MANAGER'</h1>
+        <p>TOTAL ITEMS: 0</p>
+
+        <div class="outer-border">
+            <div class="inner-border">
+                <span><i class="fa-brands fa-sistrix"></i></span>
+                <input type="text" id="searchItems" placeholder="Search items...">
+            </div>
+        </div>
+
+        <div class="outer-border new-item-input">
+            <div class="inner-border">
+                <span><i class="fa-solid fa-clipboard-list"></i></span>
+                <input type="text" placeholder="ENTER NEW ITEMS">
+            </div>
+            <button class="add-item-btn">ADD ITEMS</button>
+        </div>
+        <div class="all-items">
+            <!-- <div class="item-container">
+                <ul class="list">
+                    <li>--- Buy sth ---</li>
+                </ul>
+                <button class="remove-btn">REMOVE</button>
+            </div> -->
+        </div>
+        <button class="clear-all-items-btn">CLEAR ALL ITEMS</button>
+
+
+    </div>
+    <div id="modal-bg">
+        <div id="modal">
+            <h1>Welcome to our List Manager</h1>
+            <button id="close-modal">x</button>
+        </div>
+    </div>
+    <div id="toast">toast</div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
