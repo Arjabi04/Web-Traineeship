@@ -7,8 +7,10 @@
 // Show "Item added!" toast for 2 seconds
 import { showToast, updateCount } from "./app.js";
 
-const allItemsWrapper = document.querySelector('.all-items');
+// const allItemsWrapper = document.querySelector('.all-items');
+const itemList = document.getElementById('item-list');
 const itemInput = document.querySelector('.new-item-input input');
+const clearBtn = document.querySelector('.clear-all-items-btn');
 
 let itemCount = 0;
 export function addItem() {
@@ -22,24 +24,26 @@ export function addItem() {
     }
 
     // Create a new <li> with the item text and a Remove button
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'item-container';
-
-    itemDiv.innerHTML = `
-        <ul class="list">
-            <li>- - - ${text} - - -</li>
-        </ul>
+    const item = document.createElement('li');
+    item.className = 'item-container';
+    item.innerHTML = `
+        <span>${text}</span>
         <button class="remove-btn">REMOVE</button>
     `;
 
-    allItemsWrapper.appendChild(itemDiv);
+    itemList.appendChild(item);
 
     // Clear the input field after adding
     itemInput.value = "";
 
     // Update the item count
     itemCount++;
+
     updateCount(itemCount);
+
+    if (itemCount > 0) {
+        clearBtn.style.display = 'flex';
+    }
 
     // Show "Item added!" toast for 2 seconds
     showToast("Item Added!");

@@ -84,6 +84,10 @@ input {
     background-color: var(--hover);
 }
 
+.clear-all-items-btn {
+    display: none;
+}
+
 /* js */
 #toast {
     position: fixed;
@@ -129,11 +133,13 @@ input {
 }
 
 /* list css */
-.all-items {
+#item-list {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 0;
+    list-style: none;
 }
 
 .item-container {
@@ -143,15 +149,11 @@ input {
     border: 1.5px dashed black;
     border-radius: 4px;
     align-items: center;
-
-    /* display: none; */
-}
-
-.list {
     list-style: none;
-    padding: 0;
     text-align: center;
 }
+
+
 
 .remove-btn {
     border: 1px solid black;

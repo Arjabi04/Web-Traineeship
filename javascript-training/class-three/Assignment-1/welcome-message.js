@@ -9,7 +9,7 @@ export function welcomeWindow() {
     window.addEventListener('load', () => {
         setTimeout(() => {
             const modalBg = document.getElementById('modal-bg');
-            console.log(modalBg);
+            // console.log(modalBg);
             const closeBtn = document.getElementById('close-modal');
             // Show the modal
             if (modalBg) {
