@@ -43,6 +43,8 @@ export function addItem() {
 
     if (itemCount > 0) {
         clearBtn.style.display = 'flex';
+        itemList.style.display = 'flex';
+
     }
 
     // Show "Item added!" toast for 2 seconds
