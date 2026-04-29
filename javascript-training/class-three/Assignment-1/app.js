@@ -1,6 +1,7 @@
 import { welcomeWindow } from "./welcome-message.js";
 import { addItem } from "./add-items.js";
 import { clearAll, removeItems } from "./remove-items.js";
+import { stylingWithJS } from "./styling-with-js.js";
 
 const totalItemsText = document.querySelector('.container p');
 const toast = document.getElementById('toast');
@@ -26,9 +27,12 @@ welcomeWindow();
 const addBtn = document.querySelector('.add-item-btn');
 addBtn.addEventListener('click', addItem);
 
-// event listener to the list
-// allItemsWrapper.addEventListener('click', removeItem);
+// remove one item from list
 removeItems();
 
+// clear all items from list 
 clearAll();
+
+// styling with list
+stylingWithJS();
 
