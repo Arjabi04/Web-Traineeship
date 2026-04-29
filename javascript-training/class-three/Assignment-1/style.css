@@ -86,6 +86,7 @@ input {
 
 .clear-all-items-btn {
     display: none;
+    justify-content: center;
 }
 
 /* js */

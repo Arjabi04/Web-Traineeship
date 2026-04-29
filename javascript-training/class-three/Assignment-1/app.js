@@ -1,6 +1,6 @@
 import { welcomeWindow } from "./welcome-message.js";
 import { addItem } from "./add-items.js";
-import { initRemoval } from "./remove-items.js";
+import { clearAll, removeItems } from "./remove-items.js";
 
 const totalItemsText = document.querySelector('.container p');
 const toast = document.getElementById('toast');
@@ -26,8 +26,9 @@ welcomeWindow();
 const addBtn = document.querySelector('.add-item-btn');
 addBtn.addEventListener('click', addItem);
 
-
-const allItemsWrapper = document.querySelector('.all-items');
 // event listener to the list
 // allItemsWrapper.addEventListener('click', removeItem);
-initRemoval();
+removeItems();
+
+clearAll();
+
