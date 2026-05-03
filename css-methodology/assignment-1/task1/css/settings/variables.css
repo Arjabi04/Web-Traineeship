@@ -1,10 +1,12 @@
 :root {
     --color-primary: #7C6957;
+    --color-primary-dark: #774a20;
     --color-primary-light: #8a7868;
     --color-primary-lighter: #9a8a7a;
     --color-background: white;
     --color-sidebar-bg: #F5E8DF;
     --color-sidebar-hover: #CBBFB6;
+    --color-sidebar-hover-darker: #cab2a0;
     --color-divider: white;
     --shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     --border-radius-card: 10px;

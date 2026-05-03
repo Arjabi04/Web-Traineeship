@@ -1,8 +1,13 @@
+/* Structure */
 .profile-card {
     width: 50%;
     height: 80%;
     display: flex;
     overflow: hidden;
+}
+
+/* Skin */
+.profile-card {
     background: var(--color-background);
     border-radius: var(--border-radius-card);
     box-shadow: var(--shadow);

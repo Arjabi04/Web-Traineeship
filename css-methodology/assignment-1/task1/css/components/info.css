@@ -12,6 +12,12 @@
     border-bottom: none;
 }
 
+/* Skin */
+.info--light {
+    border-color: var(--color-divider);
+    background: var(--color-sidebar-bg);
+}
+
 .info:hover {
     background: var(--color-sidebar-hover);
 }
@@ -22,9 +28,24 @@
     color: var(--color-primary);
 }
 
+.info--dark {
+    border-color: var(--color-divider);
+    background: var(--color-sidebar-hover);
+}
+
+.info--dark:hover {
+    background: var(--color-sidebar-hover-darker);
+}
+
 .info__label {
     color: var(--color-primary-light);
     margin-top: 5px;
+}
+
+.info__number {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-primary);
 }
 
 /* Responsive */

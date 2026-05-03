@@ -1,17 +1,39 @@
+/* Structure */
 .btn {
     display: block;
     width: 160px;
     margin: 12px auto;
     padding: 10px 0;
-    border-radius: var(--border-radius-btn);
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    transition: 0.3s;
-    text-align: center;
-    font-weight: 900;
 }
 
-.btn:hover {
+/* Skin */
+.btn {
+    font-weight: 900;
+    text-align: center;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius-btn);
+    color: var(--color-primary);
+    transition: 0.3s;
+}
+
+.btn--light:hover {
     background: var(--color-primary);
+    color: var(--color-background);
+}
+
+.btn--dark {
+    font-weight: 900;
+    text-align: center;
+    border: 2px solid;
+    border-color: var(--color-primary);
+    border-radius: var(--border-radius-btn);
+    background: var(--color-primary);
+    color: var(--color-background);
+    transition: 0.3s;
+}
+
+.btn--dark:hover {
+    background-color: var(--color-primary-dark);
+
     color: var(--color-background);
 }
