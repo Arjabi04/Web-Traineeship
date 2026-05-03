@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 14 - News Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* css variables */
+        :root {
+            --orange: #E9AB53;
+            --red: #F15E50;
+            --off-white: #FDF8EC;
+            --grey: #5E607A;
+            --black: #000000;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-white);
+            padding: 1rem;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        /* hamburger */
+        /* The checkbox is invisible but toggles state */
+        #menu-toggle {
+            display: none;
+        }
+
+        .hamburger-label {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger-label span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--black);
+        }
+
+        /* Nav list thats hidden by default */
+        .navbar nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 30%;
+            background-color: var(--off-white);
+            z-index: 999;
+            padding: 24px;
+        }
+
+        /* darker background when nav bar is active */
+        /* :checked  — triggers if menu is open
+             ~ — targets sibling element that comes after
+   ::before  — creates a  element before .container's content */
+        #menu-toggle:checked~.container::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+
+        /* Close label  */
+        .nav-close-label {
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+
+        /* Nav links */
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding-top: 50px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--grey);
+            font-weight: lighter;
+        }
+
+        .navbar a:hover {
+            color: var(--red);
+        }
+
+        /* Show nav overlay when checkbox is checked */
+        #menu-toggle:checked~.container .navbar nav {
+            display: block;
+        }
+
+        /* Navbar row */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            width: 40px;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            display: block;
+        }
+
+        /* On mobile, hero-content is single column */
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .hero-description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            font-weight: lighter;
+        }
+
+        .hero-description p {
+            color: var(--grey);
+            line-height: 1.5;
+        }
+
+        .btn-primary {
+            background-color: var(--red);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            letter-spacing: 3px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--black);
+        }
+
+        /* Sidebar "New" */
+        .sidebar {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar h2 {
+            color: var(--orange);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .new-item {
+            padding: 1.5rem 0;
+        }
+
+        .new-item:not(:last-child) {
+            border-bottom: 1px solid var(--grey);
+        }
+
+        .new-item h3 {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .new-item h3:hover {
+            color: var(--orange);
+        }
+
+        .new-item p {
+            color: var(--grey);
+            font-size: 0.9rem;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .article-card {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .article-card img {
+            width: 100px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-content span {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--grey);
+        }
+
+        .card-content h4 {
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .card-content h4:hover {
+            color: var(--red);
+        }
+
+        .card-content p {
+            color: var(--grey);
+            font-size: 0.9rem;
+        }
+
+
+        /* tablet*/
+
+        @media (min-width: 700px) {
+
+            body {
+                padding: 2rem;
+            }
+
+            /* Hide hamburger on tablet+ */
+            .hamburger-label {
+                display: none;
+            }
+
+            /* Show nav inline — override the mobile hidden state */
+            .navbar nav {
+                display: flex;
+                position: static;
+            }
+
+            /* Hide close button inside nav (only needed on mobile overlay) */
+            .nav-close-label {
+                display: none;
+            }
+
+            /* Horizontal nav links */
+            .navbar ul {
+                flex-direction: row;
+                gap: 2rem;
+            }
+
+
+            /* Hero content: 2 columns on tablet */
+            .hero-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            /* Cards: 2 columns on tablet */
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* desktop*/
+        @media (min-width: 1100px) {
+
+            body {
+                display: flex;
+                justify-content: center;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 1100px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .navbar {
+                grid-column: 1 / -1;
+                margin-bottom: 0;
+            }
+
+            /* Hero spans columns 1-2 */
+            .hero {
+                grid-column: 1 / 3;
+                margin-bottom: 0;
+            }
+
+            /* Sidebar in column 3 */
+            .sidebar {
+                grid-column: 3 / 4;
+                margin-bottom: 0;
+            }
+
+            /* Cards span all 3 columns */
+            .cards {
+                grid-column: 1 / -1;
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hidden checkbox — controls mobile menu opening and closing -->
+    <input type="checkbox" id="menu-toggle" aria-hidden="true">
+
+    <main class="container">
+
+        <header class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="W. logo">
+            </div>
+
+            <!-- Hamburger icon  -->
+            <label class="hamburger-label" for="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Nav bar -->
+            <nav>
+                <!-- Close button  -->
+                <label class="nav-close-label" for="menu-toggle">x</label>
+
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Categories</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="images/hero-image.jpg" alt="Abstract 3D shapes">
+            </div>
+            <div class="hero-content">
+                <h1>The Bright Future of Web 3.0?</h1>
+                <div class="hero-description">
+                    <p>We dive into the next evolution of the web that claims to put the power of the platforms back
+                        into the hands of the people. But is it really fulfilling its promise?</p>
+                    <button class="btn-primary">READ MORE</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar "New" -->
+        <div class="sidebar">
+            <h2>New</h2>
+            <article class="new-item">
+                <h3>Hydrogen VS Electric Cars</h3>
+                <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+            </article>
+            <article class="new-item">
+                <h3>The Downsides of AI Artistry</h3>
+                <p>What are the possible adverse effects of on-demand AI image generation?</p>
+            </article>
+            <article class="new-item">
+                <h3>Is VC Funding Drying Up?</h3>
+                <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+            </article>
+        </div>
+
+        <!-- Article Cards -->
+        <section class="cards">
+            <article class="article-card">
+                <img src="images/retro-pc.jpg" alt="Retro PCs">
+                <div class="card-content">
+                    <span>01</span>
+                    <h4>Reviving Retro PCs</h4>
+                    <p>What happens when old PCs are given modern upgrades?</p>
+                </div>
+            </article>
+            <article class="article-card">
+                <img src="images/top-laptops.jpg" alt="Keyboard close up">
+                <div class="card-content">
+                    <span>02</span>
+                    <h4>Top 10 Laptops of 2022</h4>
+                    <p>Our best picks for various needs and budgets.</p>
+                </div>
+            </article>
+            <article class="article-card">
+                <img src="images/gaming-growth.jpg" alt="Gaming controller">
+                <div class="card-content">
+                    <span>03</span>
+                    <h4>The Growth of Gaming</h4>
+                    <p>How the pandemic has sparked fresh opportunities.</p>
+                </div>
+            </article>
+        </section>
+
+    </main>
+</body>
+
+</html>
