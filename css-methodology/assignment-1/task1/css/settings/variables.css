@@ -1,0 +1,14 @@
+:root {
+    --color-primary: #7C6957;
+    --color-primary-light: #8a7868;
+    --color-primary-lighter: #9a8a7a;
+    --color-background: white;
+    --color-sidebar-bg: #F5E8DF;
+    --color-sidebar-hover: #CBBFB6;
+    --color-divider: white;
+    --shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    --border-radius-card: 10px;
+    --border-radius-btn: 30px;
+    --font-family: 'Open Sans', sans-serif;
+    --gradient: linear-gradient(to right, #E8D06F, #C8802C);
+}

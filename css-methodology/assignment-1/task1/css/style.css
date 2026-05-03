@@ -1,0 +1,10 @@
+/* Settings */
+@import 'settings/variables.css';
+
+/* Base */
+@import 'base/reset.css';
+
+/* Components */
+@import 'components/profile-card.css';
+@import 'components/info.css';
+@import 'components/btn.css';

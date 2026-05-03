@@ -1,0 +1,8 @@
+body {
+    font-family: var(--font-family);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--gradient);
+}

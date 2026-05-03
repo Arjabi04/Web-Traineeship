@@ -1,0 +1,17 @@
+.btn {
+    display: block;
+    width: 160px;
+    margin: 12px auto;
+    padding: 10px 0;
+    border-radius: var(--border-radius-btn);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    transition: 0.3s;
+    text-align: center;
+    font-weight: 900;
+}
+
+.btn:hover {
+    background: var(--color-primary);
+    color: var(--color-background);
+}
