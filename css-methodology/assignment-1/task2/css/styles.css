@@ -1,0 +1,20 @@
+/* Settings — variables first, they define design tokens (colors, spacing, fonts) and produce no CSS output */
+@import 'settings/variables.css';
+
+/* Base — resets and global element defaults come early because they affect everything and have the lowest specificity */
+@import 'base/reset.css';
+@import 'base/elements.css';
+
+
+/* Modules —page sections (navbar, hero, sidebar) are built on top of base styles and define major structure */
+@import 'modules/navbar.css';
+@import 'modules/hero.css';
+@import 'modules/new-sidebar.css';
+
+
+/* Components —  reusable UI pieces (buttons, cards) come after modules so they can be used anywhere and safely overridden if needed  */
+@import 'components/article-card.css';
+@import 'components/btn.css';
+
+/* Layout - last so grid and positioning rules can override module/component layout and control final page structure */
+@import 'layout/grid.css';
