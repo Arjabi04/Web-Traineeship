@@ -10,6 +10,7 @@
         /* css variables */
         :root {
             --orange: #E9AB53;
+            --orange-light: #e7c494;
             --red: #F15E50;
             --off-white: #FDF8EC;
             --grey: #5E607A;
@@ -33,26 +34,26 @@
         }
 
         /* hamburger */
-        /* The checkbox is invisible but toggles state */
-        #menu-toggle {
+        /* class instead of #id for CSS targeting */
+        .menu-toggle {
             display: none;
         }
 
-        .hamburger-label {
+        .navbar__hamburger {
             cursor: pointer;
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
 
-        .hamburger-label span {
+        .navbar__hamburger-line {
             width: 24px;
             height: 2px;
             background-color: var(--black);
         }
 
-        /* Nav list thats hidden by default */
-        .navbar nav {
+        /* Nav hidden by default on mobile */
+        .navbar__nav {
             display: none;
             position: fixed;
             top: 0;
@@ -64,11 +65,8 @@
             padding: 24px;
         }
 
-        /* darker background when nav bar is active */
-        /* :checked  — triggers if menu is open
-             ~ — targets sibling element that comes after
-   ::before  — creates a  element before .container's content */
-        #menu-toggle:checked~.container::before {
+        /* darker overlay when nav is open */
+        .menu-toggle:checked~.container::before {
             content: '';
             position: fixed;
             inset: 0;
@@ -76,15 +74,15 @@
             z-index: 99;
         }
 
-        /* Close label  */
-        .nav-close-label {
+        /* Close button */
+        .navbar__close {
             display: flex;
             justify-content: flex-end;
             cursor: pointer;
         }
 
         /* Nav links */
-        .navbar ul {
+        .navbar__list {
             list-style: none;
             display: flex;
             flex-direction: column;
@@ -92,18 +90,18 @@
             padding-top: 50px;
         }
 
-        .navbar a {
+        .navbar__link {
             text-decoration: none;
             color: var(--grey);
             font-weight: lighter;
         }
 
-        .navbar a:hover {
+        .navbar__link:hover {
             color: var(--red);
         }
 
         /* Show nav overlay when checkbox is checked */
-        #menu-toggle:checked~.container .navbar nav {
+        .menu-toggle:checked~.container .navbar__nav {
             display: block;
         }
 
@@ -115,7 +113,7 @@
             margin-bottom: 2rem;
         }
 
-        .logo img {
+        .navbar__logo img {
             width: 40px;
         }
 
@@ -128,24 +126,24 @@
             margin-bottom: 2rem;
         }
 
-        .hero-image img {
+        .hero__image img {
             width: 100%;
             display: block;
         }
 
-        /* On mobile, hero-content is single column */
-        .hero-content {
+        /* On mobile, hero__content is single column */
+        .hero__content {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
 
-        .hero h1 {
+        .hero__title {
             font-size: 3.5rem;
             font-weight: bold;
         }
 
-        .hero-description {
+        .hero__description {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -153,12 +151,12 @@
             font-weight: lighter;
         }
 
-        .hero-description p {
+        .hero__text {
             color: var(--grey);
             line-height: 1.5;
         }
 
-        .btn-primary {
+        .btn {
             background-color: var(--red);
             color: var(--white);
             border: none;
@@ -169,92 +167,107 @@
             transition: background-color 0.2s ease;
         }
 
-        .btn-primary:hover {
+        .btn:hover {
             background-color: var(--black);
         }
 
-        /* Sidebar "New" */
-        .sidebar {
+        /* new-sidebar Block */
+        .new-sidebar {
             background-color: var(--black);
             color: var(--white);
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            height: fit-content;
         }
 
-        .sidebar h2 {
+        .new-sidebar__title {
             color: var(--orange);
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .new-item {
-            padding: 1.5rem 0;
+        .new-sidebar__item {
+            padding: 1rem 0;
         }
 
-        .new-item:not(:last-child) {
+        .new-sidebar__item:not(:last-child) {
             border-bottom: 1px solid var(--grey);
         }
 
-        .new-item h3 {
+        .new-sidebar__heading {
             margin-bottom: 0.5rem;
             cursor: pointer;
         }
 
-        .new-item h3:hover {
+        .new-sidebar__heading:hover {
             color: var(--orange);
         }
 
-        .new-item p {
+        .new-sidebar__text {
             color: var(--grey);
             font-size: 0.9rem;
+            padding-bottom: .5rem;
         }
 
-        .cards {
+        .new-sidebar__link {
+            text-decoration: none;
+            color: var(--orange-light);
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+
+        }
+
+        .new-sidebar__link:hover {
+            color: var(--white);
+        }
+
+        /* article-grid Block */
+        .article-grid {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
 
+        /* article-card Block */
         .article-card {
             display: flex;
             gap: 1.5rem;
         }
 
-        .article-card img {
+        .article-card__image {
             width: 100px;
             height: auto;
             object-fit: cover;
         }
 
-        .card-content {
+        .article-card__content {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card-content span {
+        .article-card__number {
             font-size: 2rem;
             font-weight: 700;
             color: var(--grey);
         }
 
-        .card-content h4 {
+        .article-card__title {
             font-weight: 800;
             cursor: pointer;
         }
 
-        .card-content h4:hover {
+        .article-card__title:hover {
             color: var(--red);
         }
 
-        .card-content p {
+        .article-card__text {
             color: var(--grey);
             font-size: 0.9rem;
         }
 
 
-        /* tablet*/
-
+        /* tablet */
         @media (min-width: 700px) {
 
             body {
@@ -262,43 +275,42 @@
             }
 
             /* Hide hamburger on tablet+ */
-            .hamburger-label {
+            .navbar__hamburger {
                 display: none;
             }
 
-            /* Show nav inline — override the mobile hidden state */
-            .navbar nav {
+            /* Show nav inline */
+            .navbar__nav {
                 display: flex;
                 position: static;
             }
 
-            /* Hide close button inside nav (only needed on mobile overlay) */
-            .nav-close-label {
+            /* Hide close button */
+            .navbar__close {
                 display: none;
             }
 
             /* Horizontal nav links */
-            .navbar ul {
+            .navbar__list {
                 flex-direction: row;
                 gap: 2rem;
             }
 
-
             /* Hero content: 2 columns on tablet */
-            .hero-content {
+            .hero__content {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
             }
 
             /* Cards: 2 columns on tablet */
-            .cards {
+            .article-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        /* desktop*/
+        /* desktop */
         @media (min-width: 1100px) {
 
             body {
@@ -326,13 +338,13 @@
             }
 
             /* Sidebar in column 3 */
-            .sidebar {
+            .new-sidebar {
                 grid-column: 3 / 4;
                 margin-bottom: 0;
             }
 
             /* Cards span all 3 columns */
-            .cards {
+            .article-grid {
                 grid-column: 1 / -1;
                 grid-template-columns: repeat(3, 1fr);
                 margin-top: 0;
@@ -343,7 +355,7 @@
 
 <body>
 
-    <!-- Hidden checkbox — controls mobile menu opening and closing -->
+    <!-- Hidden checkbox — id kept for label/input connection, class used for CSS -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true">
 
     <main class="container">
