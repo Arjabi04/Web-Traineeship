@@ -1,0 +1,42 @@
+.article-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.article-card {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.article-card__image {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.article-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-card__number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--grey);
+}
+
+.article-card__title {
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.article-card__title:hover {
+    color: var(--red);
+}
+
+.article-card__text {
+    color: var(--grey);
+    font-size: 0.9rem;
+}
