@@ -1,1 +1,15 @@
 class-notes/
+
+# Ignore WordPress Core
+wp-admin/
+wp-includes/
+*.php
+!wp-config.php # Keep this if you use a template, but remove sensitive DB info!
+
+# Ignore Uploads (Images take up too much space)
+wp-content/uploads/
+
+# Ignore Logs and System files
+.htaccess
+node_modules/
+*.log
