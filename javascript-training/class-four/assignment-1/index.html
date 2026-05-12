@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Offcanvas Throttle</title>
+
+    <style>
+        :root {
+            --grey-colour: rgb(94, 94, 94);
+            --light-grey-colour: rgb(200, 200, 200);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: relative;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            background-color: white;
+            border-bottom: 1px solid var(--grey-colour);
+            z-index: 1000;
+        }
+
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background: black;
+        }
+
+        /* Close Icon */
+        .close-icon {
+            display: none;
+            font-size: 28px;
+        }
+
+        /* Offcanvas */
+        .offcanvas {
+            position: fixed;
+
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+
+            background: var(--light-grey-colour);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: 0.5s;
+        }
+
+        .offcanvas.show {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">LOGO</div>
+
+        <button class="toggle-btn" id="toggleBtn">
+
+            <!-- hamburger icon-->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- close icon -->
+            <span class="close-icon">✖</span>
+
+        </button>
+
+    </div>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas" id="sidebar">
+        <h3> OFF-CANVAS <br> SIDEBAR </h3>
+    </div>
+
+    <script>
+
+        let isThrottled = false;
+
+        const toggleBtn = document.getElementById("toggleBtn");
+        const sidebar = document.getElementById("sidebar");
+
+        const hamburger = document.querySelector(".hamburger");
+        const closeIcon = document.querySelector(".close-icon");
+
+        toggleBtn.addEventListener("click", () => {
+
+            if (isThrottled) return;
+
+            isThrottled = true;
+
+            // toggle sidebar
+            sidebar.classList.toggle("show");
+
+            // change the icons
+            if (sidebar.classList.contains("show")) {
+
+                hamburger.style.display = "none";
+                closeIcon.style.display = "inline";
+
+            } else {
+
+                hamburger.style.display = "flex";
+                closeIcon.style.display = "none";
+
+            }
+
+            // remove throttle after 500ms
+            setTimeout(() => {
+                isThrottled = false;
+            }, 500);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

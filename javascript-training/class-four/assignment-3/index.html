@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mutation Observer</title>
+
+    <style>
+        body {
+            padding: 40px;
+        }
+
+        /* app area */
+        #app {
+            margin-bottom: 40px;
+        }
+
+        /* button */
+        .add-btn {
+            padding: 20px 50px;
+            background: rgb(108, 46, 46);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* box container */
+        #boxContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        /* boxes */
+        .box {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- App Container -->
+    <div id="app"></div>
+
+    <!-- Box Container -->
+    <div id="boxContainer"></div>
+
+    <script>
+
+        const app = document.getElementById("app");
+        const boxContainer = document.getElementById("boxContainer");
+
+        let colorIndex = 0;
+        // colors for boxes
+        const colors = ["red", "blue", "yellow", "green", "purple", "lightblue", "brown", "orange"];
+
+        // mutation observer to watch for changes in the app container
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                console.log("DOM Changed");
+                console.log(`Type of change: ${mutation.type}`);
+                console.log(`New content: ${app.textContent}`);
+                mutation.addedNodes.forEach((node) => {
+
+                    // check if button was added
+                    if (node.id === "addBtn") {
+
+                        console.log("Button Added");
+
+                        // add click event
+                        node.addEventListener("click", () => {
+                            // create box
+                            const box = document.createElement("div");
+                            box.classList.add("box");
+
+                            console.log("Box Created");
+                            console.log(`Type of change: ${mutation.type}`);
+
+                            // different colors
+                            box.style.background = colors[colorIndex];
+                            colorIndex++;
+                            if (colorIndex >= colors.length) {
+                                colorIndex = 0;
+                            }
+
+                            // append box
+                            boxContainer.appendChild(box);
+
+                        });
+
+                    }
+
+                });
+
+            });
+
+        });
+
+        // observe app container
+        observer.observe(app, {
+            childList: true, // watch for added/removed child elements
+        });
+
+        // Create button after 2 seconds
+        setTimeout(() => {
+            const button = document.createElement("button");
+            button.textContent = "Add Box";
+            button.id = "addBtn";
+            button.classList.add("add-btn");
+            app.appendChild(button);
+
+        }, 2000);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Rotation Animation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(243, 243, 243);
+        }
+
+        /* Extra height so page can scroll */
+        section {
+            height: 120vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 100px 50px;
+        }
+
+        /*  box styles */
+        .box {
+            width: 400px;
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 42px;
+            font-weight: bold;
+            text-align: center;
+
+            transition: transform 1s ease;
+        }
+
+        .box1 {
+            background: rgb(65, 238, 65);
+        }
+
+        .box2 {
+            background: rgb(238, 171, 45);
+        }
+
+        .rotate {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- top spacing -->
+    <section></section>
+
+    <!-- Boxes -->
+    <div class="container">
+        <!-- Rotate once -->
+        <div class="box box1" id="box1">
+            Rotate Once
+        </div>
+        <!-- Rotate every time -->
+        <div class="box box2" id="box2">
+            Rotate Every Time
+        </div>
+
+    </div>
+
+    <!-- bottom spacing -->
+    <section></section>
+
+    <script>
+
+        // Box 1 - rotate once when 40% visible, then stop observing
+        const box1 = document.getElementById("box1");
+        const observerOne = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // rotate once
+                        box1.classList.add("rotate");
+                        // stop observing forever
+                        observer.disconnect();
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.2
+            }
+        );
+
+        observerOne.observe(box1);
+
+
+        // Box 2 - rotate every time it enters the viewport
+        const box2 = document.getElementById("box2");
+
+        const observerTwo = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // rotate when visible
+                        box2.classList.add("rotate");
+                    } else {
+                        // reset when hidden
+                        box2.classList.remove("rotate");
+                    }
+                });
+            },
+            {
+                threshold: 0.2
+            }
+        );
+
+        observerTwo.observe(box2);
+
+    </script>
+
+</body>
+
+</html>
