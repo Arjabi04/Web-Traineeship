@@ -65,14 +65,18 @@ $btn-sizes: (
   }
 
   // :disabled state
-  &:disabled,
-  &--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    filter: none;
+&:disabled,
+&--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  &:hover,
+  &:focus,
+  &:active {
     transform: none;
-    box-shadow: none;
+    filter: none;
   }
+}
 
   // Size modifiers via @each 
   @each $size-name, $size-values in $btn-sizes {
