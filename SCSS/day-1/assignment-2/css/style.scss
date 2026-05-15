@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+// Spacing scale list 
+$spacing-scale: (4px, 8px, 16px, 24px, 32px, 48px);
+
+// Responsive-padding mixin 
+@mixin responsive-padding($mobile, $desktop) {
+  padding: $mobile;
+
+  @media (min-width: 768px) {
+    padding: $desktop;
+  }
+}
+
+// Margin utility classes .m-1 through .m-6 
+$counter: 1;
+
+@each $space in $spacing-scale {
+  .m-#{$counter} {
+    margin: $space;
+  }
+  $counter: $counter + 1;
+}
+
+// card 
+.card {
+  background:#f1f1f1;
+  border-radius: 0.75rem;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.284);
+  border:1px solid #879fbf;
+
+  @include responsive-padding(1rem, 2rem);
+
+  &__title {
+    font-size:1.5rem;
+    font-weight:700;
+    margin-bottom:0.5rem;
+  }
+
+
+}
+
+.section {
+  width: 100%;
+  background: #bac5de;
+
+  @include responsive-padding(1.5rem, 4rem);
+
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+}

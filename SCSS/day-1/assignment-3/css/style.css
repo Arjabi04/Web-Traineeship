@@ -1,0 +1,36 @@
+.body {
+  margin: 0;
+}
+
+.navbar {
+  background: #57744e;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.navbar__list .navbar__item .navbar__link {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+.navbar__list .navbar__item .navbar__link:hover {
+  color: #fcc215;
+}
+.navbar__list .navbar__item .navbar__link:focus {
+  color: #fcc215;
+}
+.navbar__list .navbar__item .navbar__link:active {
+  color: rgb(255, 106, 0);
+}/*# sourceMappingURL=style.css.map */

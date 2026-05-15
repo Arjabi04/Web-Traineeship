@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+.m-1 {
+  margin: 4px;
+}
+
+.m-2 {
+  margin: 8px;
+}
+
+.m-3 {
+  margin: 16px;
+}
+
+.m-4 {
+  margin: 24px;
+}
+
+.m-5 {
+  margin: 32px;
+}
+
+.m-6 {
+  margin: 48px;
+}
+
+.card {
+  background: #f1f1f1;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.284);
+  border: 1px solid #879fbf;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+}
+.card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section {
+  width: 100%;
+  background: #bac5de;
+  padding: 1.5rem;
+}
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem;
+  }
+}
+.section__heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}/*# sourceMappingURL=style.css.map */

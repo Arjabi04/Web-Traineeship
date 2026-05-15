@@ -1,0 +1,97 @@
+@use "sass:map";
+
+// Variant map 
+$btn-variants: (
+  "primary": (
+    "bg":     #5cc67c,
+    "color":  #ffffff,
+    "border": #0fa11b,
+  ),
+  "danger": (
+    "bg":     #de0909,
+    "color":  #ffffff,
+    "border": #870d0d,
+  ),
+  "ghost": (
+    "bg":     transparent,
+    "color":  #0000009a,
+    "border": #d1d5db,
+  ),
+);
+
+// Size map 
+$btn-sizes: (
+  "sm": (
+    "padding":   0.5rem 0.75rem,
+    "font-size": 0.75rem,
+  ),
+  "md": (
+    "padding":   0.75rem 1rem,
+    "font-size": 1rem,
+  ),
+  "lg": (
+    "padding":   1rem 1.25rem,
+    "font-size": 1.25rem,
+  ),
+);
+
+// Variant mixin 
+@mixin button-variant($variant-name) {
+  // map.get to access the variant's properties.
+  $variant: map.get($btn-variants, $variant-name);
+
+  //variant properties assigned to CSS properties
+  background-color: map.get($variant, "bg");
+  color: map.get($variant, "color");
+  border: 2px solid map.get($variant, "border");
+}
+
+//  Base .btn styles 
+.btn {
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 1rem 1rem;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+    filter: brightness(0.85);
+  }
+
+  // :disabled state
+  &:disabled,
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: none;
+    transform: none;
+    box-shadow: none;
+  }
+
+  // Size modifiers via @each 
+  @each $size-name, $size-values in $btn-sizes {
+    &--#{$size-name} {
+      padding: map.get($size-values, "padding");
+      font-size: map.get($size-values, "font-size");
+    }
+  }
+}
+
+// Variant classes via @each 
+@each $variant-name, $_ in $btn-variants {
+  .btn--#{$variant-name} {
+    @include button-variant($variant-name);
+
+    // ghost gets a slightly tinted hover background instead of brightness filter
+    @if $variant-name == "ghost" {
+      &:hover {
+        background-color:white;
+      }
+    }
+  }
+}
