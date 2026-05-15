@@ -3,7 +3,7 @@
 // Variant map 
 $btn-variants: (
   "primary": (
-    "bg":     #5cc67c,
+    "bg":     #649272,
     "color":  #ffffff,
     "border": #0fa11b,
   ),
@@ -56,6 +56,7 @@ $btn-sizes: (
 
   &:hover {
     transform: translateY(-1px);
+    filter: brightness(1.2);
   }
   &:active {
     transform: translateY(0);

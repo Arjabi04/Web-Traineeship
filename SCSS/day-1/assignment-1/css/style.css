@@ -7,6 +7,7 @@
 }
 .btn:hover {
   transform: translateY(-1px);
+  filter: brightness(1.2);
 }
 .btn:active {
   transform: translateY(0);
@@ -34,7 +35,7 @@
 }
 
 .btn--primary {
-  background-color: #5cc67c;
+  background-color: #649272;
   color: #ffffff;
   border: 2px solid #0fa11b;
 }
