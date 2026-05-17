@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F6F7FB;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.channels {
+  width: 100%;
+  max-width: 1100px;
+
+  &__label {
+    color: #00A599;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 38px;
+    color: #202020;
+    margin-bottom: 80px;
+    font-weight: 400;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+.channel-card {
+  background: #ffffff;
+  min-height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+
+  &__logo {
+    width: 212px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
