@@ -1,0 +1,4 @@
+Some questions to practice
+-Convert rem to px and px to rem using scss functions
+-Generate font styles for heading h1 to h5 using map
+-Generate three button variants using mixin
