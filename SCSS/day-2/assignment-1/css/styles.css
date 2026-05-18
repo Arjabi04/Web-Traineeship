@@ -97,4 +97,15 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .insights {
+    padding: 0 20px;
+    margin: 40px auto;
+  }
+  .insights__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }/*# sourceMappingURL=styles.css.map */
