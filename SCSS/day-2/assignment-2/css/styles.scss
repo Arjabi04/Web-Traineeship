@@ -47,7 +47,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
   border-radius: 4px;
+    &:hover{
+  transform: translateY(-10px);
+  }
 
   &__logo {
     width: 212px;

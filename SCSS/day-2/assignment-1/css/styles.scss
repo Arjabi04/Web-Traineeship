@@ -67,17 +67,18 @@ body {
   border-radius: var(--radius-card);
   overflow: hidden;
   font-weight: 800;
+  transition: var(--transition);
 
   &__image-wrapper {
     position: relative;
   }
 
- &__image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
+  &__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
 
   &__tag {
     position: absolute;
@@ -107,6 +108,10 @@ body {
     font-size: 16px;
     line-height: 24px;
     color: var(--primary-color);
+  }
+
+  &:hover{
+  transform: translateY(-5px);
   }
 }
 

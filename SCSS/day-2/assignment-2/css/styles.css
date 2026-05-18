@@ -44,7 +44,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
   border-radius: 4px;
+}
+.channel-card:hover {
+  transform: translateY(-10px);
 }
 .channel-card__logo {
   width: 212px;
