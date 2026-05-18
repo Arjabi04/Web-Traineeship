@@ -5,6 +5,7 @@
 }
 
 body {
+  padding: 0 24px;
   background: #F6F7FB;
   font-family: "Inter", sans-serif;
   min-height: 100vh;
@@ -50,4 +51,15 @@ body {
   max-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .channels {
+    padding: 0 20px;
+    margin: 40px auto;
+  }
+  .channels__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }/*# sourceMappingURL=styles.css.map */

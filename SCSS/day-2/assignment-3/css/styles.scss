@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #093944;
+    --primary-color: #ffffff;
+    --secondary-color:#90A5A9;
+    --bright-green-color: #00A599;
+    --border-color:#20545F;
+    --transition: 0.5s;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin accordion-style( $padding, $border-color, $text-color, $icon-color) {
+  padding: $padding;
+  border-bottom: 1px solid $border-color;
+  .accordion{
+    &__header{
+        @include flex-between;
+        color: $text-color;
+        cursor: pointer;
+    }
+    &__content {
+        color: $text-color;
+    }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0 24px;
+    min-height: 100vh;
+    @include flex-center;
+    background: var(--bg-color);
+    font-family: "Inter", sans-serif;
+}
+
+.faq {
+    width: 100%;
+    max-width: 1100px;
+    background: var(--bg-color);
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 120px;
+
+  &__label {
+    color: var(--bright-green-color);
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+  }
+  &__title {
+    color: var(--primary-color);
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 50px;
+  }
+
+  &__button {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 100px;
+    color: var(--primary-color);
+    padding: 20px 40px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+        background: var(--primary-color);
+        color: var(--bg-color);
+    }
+  }
+}
+
+.accordion {
+  @include accordion-style(
+    28px 0,
+    var(--border-color),
+    var(--primary-color),
+    var(--bright-green-color)
+  );
+}
+
+  &[open] {
+    .accordion__header::after {
+        transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    p {
+      color: var(--secondary-color);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      padding-top: 24px;
+    }
+  }
+
+@media (max-width: 768px) {
+  .faq {
+    padding: 0 20px;
+    margin: 40px auto;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
