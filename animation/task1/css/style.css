@@ -1,0 +1,69 @@
+.container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(235, 180, 213);
+    overflow: hidden;
+}
+
+.fa-arrow-down {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-135deg);
+    transition: transform 0.5s;
+}
+
+/* Hover */
+.container:hover .fa-arrow-down {
+    animation: arrowHover 0.8s;
+}
+
+/* Mouse out */
+.container:not(:hover) .fa-arrow-down {
+    animation: arrowOut 0.8s;
+}
+
+@keyframes arrowHover {
+
+    /* middle */
+    0% {
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+    /* top right*/
+    50% {
+        transform: translate(200%, -200%) rotate(-135deg);
+    }
+    /* bottom left */
+    51% {
+        transform: translate(-200%, 200%) rotate(-135deg);
+    }
+
+    /* middle */
+    100% {
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+}
+
+@keyframes arrowOut {
+
+    /* middle */
+    0% {
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+
+    /* bottom left */
+    50% {
+        transform: translate(-200%, 200%) rotate(-135deg);
+    }
+
+    /* top right */
+    51% {
+        transform: translate(200%, -200%) rotate(-135deg);
+    }
+
+    /* middle */
+    100% {
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+}
