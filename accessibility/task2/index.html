@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibility Task 2 | Multi-Label Navigation Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Accessibility: Skip to Content Link -->
+    <a href="#" class="skip-to-content">Skip to main content</a>
+
+    <header class="global-header">
+        <!-- Tier 1: Utility & Branding -->
+        <div class="header-top-tier">
+            <div class="header-container">
+                <!-- Brand Logo -->
+                <a href="#" class="brand-logo" aria-label="Company Home">
+                    SomeWebsite
+                </a>
+
+                <!-- Right Side: Utility & Mobile Toggle -->
+                <div class="header-actions">
+                    <nav class="utility-nav" aria-label="Utility Menu">
+                        <ul>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Global Locations</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Mobile Menu Toggle Button -->
+                    <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="main-navigation"
+                        aria-label="Menu">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier 2: Main Site Navigation -->
+        <div id="main-navigation" class="header-bottom-tier">
+            <div class="header-container">
+                <nav class="main-nav" aria-label="Main Site Navigation">
+                    <ul class="nav-menu">
+                        <!-- Multi-tier Dropdown Item -->
+                        <li class="has-dropdown">
+                            <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+                                Services <span class="chevron" aria-hidden="true">v</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Consulting</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Design</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Our Work</a></li>
+                        <li><a href="#">Insights</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

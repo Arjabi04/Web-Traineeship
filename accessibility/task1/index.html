@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessibility Task 1 | Contact Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <section class="contact-form" aria-labelledby="contact-form-title">
+
+    <h1 class="contact-form__title" id="contact-form-title">Contact us</h1>
+
+    <p class="contact-form__required">(*) Asterisk denotes mandatory fields</p>
+
+    <form class="contact-form__form">
+
+      <!-- Left side -->
+      <div class="contact-form__fields">
+
+        <!-- first name -->
+        <div class="contact-form__field-group">
+          <input class="contact-form__input" type="text" id="first-name" name="first-name" required aria-required="true"
+            aria-label="First name" placeholder="First name*">
+        </div>
+
+        <!-- last name -->
+        <div class="contact-form__field-group">
+          <input class="contact-form__input" type="text" id="last-name" name="last-name" required aria-required="true"
+            aria-label="Last name" placeholder="Last name*">
+        </div>
+
+        <!-- work email -->
+        <div class="contact-form__field-group">
+          <input class="contact-form__input" type="email" id="work-email" name="work-email" required
+            aria-required="true" aria-label="Work email" placeholder="Work email*">
+        </div>
+
+        <!-- company -->
+        <div class="contact-form__field-group">
+          <input class="contact-form__input" type="text" id="company" name="company" required aria-required="true"
+            aria-label="Company" placeholder="Company*">
+        </div>
+
+        <!-- job title -->
+        <div class="contact-form__field-group">
+          <input class="contact-form__input" type="text" id="job-title" name="job-title" required aria-required="true"
+            aria-label="Job title" placeholder="Job title*">
+        </div>
+
+        <!-- phone number -->
+        <div class="contact-form__field-group">
+          <input class="contact-form__input" type="tel" id="phone-number" name="phone-number"
+            aria-label="Phone number optional" placeholder="Phone number (optional)">
+        </div>
+
+        <!-- checkbox 1 -->
+        <div class="contact-form__checkbox-group">
+          <input class="contact-form__checkbox" type="checkbox" id="privacy-policy" name="privacy-policy" required
+            aria-required="true" aria-label="Agree to privacy policy">
+          <label class="contact-form__checkbox-label" for="privacy-policy">I agree to the use or processing of my
+            personal information by Persistent Systems for hte purpose of fulfilling this request and in accordance with
+            <a href="#" aria-label="Read privacy notice">privacy notice.</a></label>
+        </div>
+
+        <!-- checkbox 2 -->
+        <div class="contact-form__checkbox-group">
+          <input class="contact-form__checkbox" type="checkbox" id="subscribe-updates" name="subscribe-updates"
+            aria-label="Subscribe to updates">
+          <label class="contact-form__checkbox-label" for="subscribe-updates">Subscribe me to the Persistent's latest
+            thought leadership, blogs and updates.</label>
+        </div>
+
+      </div>
+
+
+      <!-- Right side -->
+
+      <!-- text area -->
+      <div class="contact-form__message-section">
+
+        <div class="contact-form__field-group">
+          <label class="contact-form__label" for="message">How can we help you?</label>
+
+          <textarea class="contact-form__textarea" id="message" name="message" aria-label="How can we help you?"
+            placeholder="How can we help you?"></textarea>
+        </div>
+
+        <p class="contact-form__email-text">
+          You can also email us directly at
+          <a class="contact-form__email-link" href="mailto:sujit@outside.studio"
+            aria-label="Email sujit at outside studio">sujit@outside.studio</a>
+        </p>
+
+      </div>
+
+      <button class="contact-form__submit-button" type="submit" aria-label="Submit contact form">Submit</button>
+
+    </form>
+
+  </section>
+  <script src="./script.js"></script>
+</body>
+
+</html>
