@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Create 12 boxes in each row
+    // Create 4 boxes in each row
     document.querySelectorAll(".image-animation__row").forEach(row => {
 
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 4; i++) {
 
             const box = document.createElement("div");
-
             box.classList.add("image-animation__item");
-
             row.appendChild(box);
         }
 
@@ -36,8 +34,9 @@ document.querySelectorAll(".image-animation").forEach(section => {
     }, {
         root: null,
         rootMargin: "0px",
-        threshold: 0
-    });
+threshold: 0.5
+
+});
 
     document
     .querySelectorAll(".image-animation__row, .text")

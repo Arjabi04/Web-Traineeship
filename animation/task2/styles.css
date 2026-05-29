@@ -5,24 +5,24 @@
 
 .container {
     margin: 0 auto;
-    padding: 3rem;
+    padding: 4rem;
 }
 
 /* IMAGE ANIMATION */
 .image-animation {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 
 .image-animation__row {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
 .image-animation__item {
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/5;
     background: rgb(223, 183, 183);
     border-radius: 4px;
     opacity: 0;
@@ -56,10 +56,10 @@
 .text.visible {
     opacity: 1;
     transform: translateY(0);
+    margin: 4rem 0;
 }
 
 .text__block {
-    margin: 4rem 0;
     line-height: 2rem;
 }
 
