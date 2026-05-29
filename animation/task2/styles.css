@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+/* IMAGE ANIMATION */
+.image-animation {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.image-animation__row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+}
+
+.image-animation__item {
+    aspect-ratio: 1/1;
+    background: rgb(223, 183, 183);
+    border-radius: 4px;
+    opacity: 0;
+    transform: scale(0);
+}
+.image-animation__row.visible .image-animation__item {
+   animation: grow-box 0.8s forwards;
+    animation-delay: var(--delay);
+}
+
+@keyframes grow-box {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+ 
+/* TEXT FADE ANIMATION */
+.text {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.text__block {
+    margin: 4rem 0;
+    line-height: 2rem;
+}
+
