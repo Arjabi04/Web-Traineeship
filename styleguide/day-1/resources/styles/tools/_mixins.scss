@@ -1,0 +1,39 @@
+@mixin d-type(
+  $font-size,
+  $font-weight,
+  $line-height,
+  $letter-spacing,
+  $mobile-font-size: null,
+  $mobile-line-height: null,
+  $font-family: null,
+  $font-style: null,
+  $text-transform: none,
+  $text-decoration: none,
+  $paragraph-spacing: 0
+) {
+  @if $font-family != null {
+    font-family: $font-family;
+  }
+
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-transform: $text-transform;
+  text-decoration: $text-decoration;
+  margin-bottom: $paragraph-spacing;
+
+  @if $font-style != null {
+    font-style: $font-style;
+  }
+
+  @if $mobile-font-size != null {
+    @include media-breakpoint-down(md) {
+      font-size: $mobile-font-size;
+
+      @if $mobile-line-height != null {
+        line-height: $mobile-line-height;
+      }
+    }
+  }
+}

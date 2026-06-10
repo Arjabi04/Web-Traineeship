@@ -1,0 +1,184 @@
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $body-color;
+  letter-spacing: -0.01em;
+}
+
+.h1-desktop,
+h1 {
+  font-family: $headings-font-family;
+  @include d-type(3rem, 600, normal, -0.01em, 2.125rem, 1);
+}
+
+.h1-italic-desktop {
+  font-family: $headings-font-family;
+  @include d-type(2.625rem, 400, normal, -0.01em, 2.125rem, 1, null, italic);
+}
+
+.h1-mobile {
+  font-family: $headings-font-family;
+  @include d-type(2.125rem, 600, 1, -0.01em);
+}
+
+.h1-italic-mobile {
+  font-family: $headings-font-family;
+  @include d-type(2.125rem, 400, 1, -0.01em, null, null, null, italic);
+}
+
+.h2-desktop,
+h2 {
+  font-family: $headings-font-family;
+  @include d-type(2.625rem, 600, normal, -0.01em, 1.5rem, 1.15);
+}
+
+.h2-mobile {
+  font-family: $headings-font-family;
+  @include d-type(1.5rem, 600, 1.15, -0.01em);
+}
+
+.h3-semi-desktop,
+h3 {
+  font-family: $headings-font-family;
+  @include d-type(1.625rem, 600, normal, -0.01em, 1.25rem, normal);
+}
+
+.h3-semi-mobile {
+  font-family: $headings-font-family;
+  @include d-type(1.25rem, 600, normal, -0.01em);
+}
+
+.h3-italic-desktop {
+  font-family: $headings-font-family;
+  @include d-type(1.625rem, 400, normal, -0.01em, 1.25rem, normal, null, italic);
+}
+
+.h3-italic-mobile {
+  font-family: $headings-font-family;
+  @include d-type(1.25rem, 400, normal, -0.01em, null, null, null, italic);
+}
+
+.special-xl {
+  font-family: $headings-font-family;
+  @include d-type(5rem, 600, 0.9, -0.01em, 2.5rem, 1);
+}
+
+.special-xl-mobile {
+  font-family: $headings-font-family;
+  @include d-type(2.5rem, 600, 1, -0.01em);
+}
+
+.number {
+  font-family: $headings-font-family;
+  @include d-type(5rem, 400, normal, -0.05em, 3.75rem, normal);
+}
+
+.number-mobile {
+  font-family: $headings-font-family;
+  @include d-type(3.75rem, 400, normal, -0.05em);
+}
+
+.intro {
+  @include d-type(1.625rem, 400, normal, -0.01em, 1.25rem, normal, $font-family-base);
+}
+
+.intro-mobile {
+  @include d-type(1.25rem, 400, 1.2, -0.01em, null, null, $font-family-base);
+}
+
+.body-text,
+p {
+  @include d-type(1.125rem, 400, normal, -0.01em, 1rem, normal, $font-family-base);
+}
+
+.body-mobile {
+  @include d-type(1rem, 400, 1.25, -0.01em, null, null, $font-family-base);
+}
+
+.body-semi {
+  @include d-type(1.125rem, 600, normal, -0.01em, 1rem, normal, $font-family-base);
+}
+
+.body-semi-mobile {
+  @include d-type(1rem, 600, normal, -0.01em, null, null, $font-family-base);
+}
+
+.body-small {
+  @include d-type(0.875rem, 400, normal, -0.01em, 0.75rem, normal, $font-family-base);
+}
+
+.body-small-mobile {
+  @include d-type(0.75rem, 400, normal, -0.01em, null, null, $font-family-base);
+}
+
+.body-small-semi {
+  @include d-type(0.875rem, 600, normal, -0.01em, 0.75rem, normal, $font-family-base);
+}
+
+.body-small-semi-mobile {
+  @include d-type(0.75rem, 600, normal, -0.01em, null, null, $font-family-base);
+}
+
+.body-xs {
+  @include d-type(0.75rem, 400, normal, -0.01em, 0.625rem, normal, $font-family-base);
+}
+
+.body-xs-mobile {
+  @include d-type(0.625rem, 400, normal, -0.01em, null, null, $font-family-base);
+}
+
+.button-text {
+  @include d-type(
+    1.375rem,
+    400,
+    1,
+    0.1em,
+    null,
+    1,
+    "Interstate-Bold",
+    null,
+    uppercase
+  );
+}
+
+.button-mobile {
+  @include d-type(
+    1.375rem,
+    400,
+    normal,
+    0.1em,
+    null,
+    null,
+    "Interstate-Bold",
+    null,
+    uppercase
+  );
+}
+
+.mono-tag {
+  @include d-type(
+    0.75rem,
+    400,
+    1,
+    -0.01em,
+    null,
+    1,
+    "InterstateMono",
+    null,
+    uppercase
+  );
+}
+
+.mono-tag-mobile {
+  @include d-type(
+    0.75rem,
+    400,
+    normal,
+    -0.01em,
+    null,
+    null,
+    "InterstateMono",
+    null,
+    uppercase
+  );
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Styleguide</title>
+  <link rel="stylesheet" href="resources/styles/app.css" />
+</head>
+
+<body>
+  <div class="styleguide">
+    <h1>Styleguide</h1>
+
+    <h2 class="styleguide__section-title">Colors</h2>
+    <div class="colors">
+      <div class="color">
+        <div class="circle circle--orange"></div>
+        <p>Brand orange</p>
+        <p>HEX #FF6449</p>
+      </div>
+      <div class="color">
+        <div class="circle circle--black"></div>
+        <p>Pure black</p>
+        <p>HEX #000000</p>
+      </div>
+      <div class="color">
+        <div class="circle circle--white"></div>
+        <p>Pure white</p>
+        <p>HEX #FFFFFF</p>
+      </div>
+    </div>
+
+    <div class="typography" id="typography"></div>
+
+    <div class="components-desktop">
+      <h2 class="components-desktop__title">Components &mdash; desktop</h2>
+      <div class="components-desktop__row">
+        <div class="components-desktop__item">
+          <button class="button-primary button-text" type="button">Button</button>
+          <p>Button <span class="component-class">.button-primary.button-text</span></p>
+        </div>
+        <div class="components-desktop__item">
+          <button class="button-primary button-primary--hover button-text" type="button">Button</button>
+          <p>Button &mdash; completed hoverstate <span class="component-class">.button-primary.button-primary--hover.button-text</span></p>
+        </div>
+      </div>
+      <div class="components-desktop__row components-desktop__row--tags">
+        <div class="components-desktop__item">
+          <button class="tag-pill mono-tag" type="button">Tag</button>
+          <p>Tag <span class="component-class">.tag-pill.mono-tag</span></p>
+        </div>
+        <div class="components-desktop__item">
+          <button class="tag-pill tag-pill--selected mono-tag" type="button">Tag</button>
+          <p>Tag &mdash; selected <span class="component-class">.tag-pill.tag-pill--selected.mono-tag</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="components-mobile">
+      <h2 class="components-mobile__title">Components &mdash; mobile</h2>
+      <div class="components-mobile__row">
+        <div class="components-mobile__item">
+          <button class="button-primary button-primary--mobile button-text" type="button">Button</button>
+          <p>Button <span class="component-class">.button-primary.button-text</span></p>
+        </div>
+      </div>
+      <div class="components-mobile__row components-mobile__row--tags">
+        <div class="components-mobile__item">
+          <button class="tag-pill mono-tag" type="button">Tag</button>
+          <p>Tag <span class="component-class">.tag-pill.mono-tag</span></p>
+        </div>
+        <div class="components-mobile__item">
+          <button class="tag-pill tag-pill--selected mono-tag" type="button">Tag</button>
+          <p>Tag &mdash; selected <span class="component-class">.tag-pill.tag-pill--selected.mono-tag</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="resources/js/app.js"></script>
+</body>
+
+</html>

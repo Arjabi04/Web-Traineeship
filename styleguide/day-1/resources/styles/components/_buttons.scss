@@ -1,0 +1,110 @@
+.components-desktop {
+  margin-top: 56px;
+}
+
+.components-desktop__title {
+  margin-bottom: 24px;
+}
+
+.components-desktop__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.components-desktop__row--tags {
+  margin-top: 40px;
+}
+
+.components-desktop__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 40px;
+  border: 1px solid $primary;
+  border-radius: 14px;
+  color: $primary;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button-primary--hover {
+  border-color: $white;
+  color: $white;
+  background-color: $primary;
+}
+
+.button-primary--mobile {
+  padding: 12px 112px;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border: 1px solid $black;
+  border-radius: 8px;
+  color: $black;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tag-pill--selected {
+  border-color: $primary;
+  color: $primary;
+}
+
+.components-mobile {
+  margin-top: 56px;
+}
+
+.components-mobile__title {
+  margin-bottom: 24px;
+}
+
+.components-mobile__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.components-mobile__row--tags {
+  margin-top: 32px;
+}
+
+.components-mobile__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.component-class {
+  color: $primary;
+  font-size: 1rem;
+  font-weight: 400;
+}

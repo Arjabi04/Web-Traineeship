@@ -7,31 +7,17 @@ $font-serif      : "Cormorant Garamond", serif;
 $brand-green     : $primary;
 $dot-inactive    : #ffffff;
 $dot-active      : #0000ff;
-$tablet          : 991.98px;
-$mobile          : 767.98px;
 
 .section-tag {
     border-radius: 4px;
     font-family: "Crayonize", "Permanent Marker", cursive;
-    font-size: 15.2px;
+    font-size: 16px;
     letter-spacing: 0.03em;
     line-height: 1;
     padding-left: 24px !important;
     padding-right: 24px !important;
-    padding-top: 8.8px !important;
-    padding-bottom: 8.8px !important;
-
-    @media (max-width: $tablet) {
-        font-size: 14px;
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
-
-    @media (max-width: $mobile) {
-        font-size: 13px;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-    }
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
 }
 
 .bg-blue {
@@ -46,223 +32,41 @@ $mobile          : 767.98px;
     background-color: #CBC3E8;
 }
 
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    height: 62vw;
-    min-height: 420px;
-    max-height: 760px;
-
-    @media (max-width: $tablet) {
-        height: 620px;
-        min-height: 620px;
-        max-height: none;
-    }
-
-    @media (max-width: $mobile) {
-        height: 640px;
-        min-height: 640px;
-    }
-}
-
 .hero-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center bottom;
-    display: block;
     transform: scale(1.5);
     transform-origin: left bottom;
-
-    @media (max-width: $tablet) {
-        transform: scale(1.25);
-        transform-origin: center bottom;
-        object-position: center bottom;
-    }
-
-    @media (max-width: $mobile) {
-        transform: scale(1.08);
-        object-position: 58% bottom;
-    }
 }
 
 .hero-overlay {
-    position: relative;
     z-index: 2;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-
-    @media (max-width: $tablet) {
-        align-items: center;
-    }
-
-    @media (max-width: $mobile) {
-        align-items: center;
-    }
-}
-
-.hero-content {
-    width: 100%;
-    max-width: 524px;
-    box-sizing: border-box;
-    padding-top: 96px;
-    padding-left: 80px;
-    padding-bottom: 96px;
-    margin-right: auto;
-
-    @media (max-width: $tablet) {
-        max-width: 470px;
-        padding-top: 72px;
-        padding-left: 48px;
-        padding-bottom: 72px;
-    }
-
-    @media (max-width: $mobile) {
-        max-width: 100%;
-        padding-top: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 40px;
-    }
 }
 
 .hero-title {
-    max-width: 16ch;
-    font-size: 65.6px;
-    line-height: 1.06;
-    font-weight: 400;
-    margin: 0;
-
-    @media (max-width: $tablet) {
-        max-width: 13ch;
-        font-size: 52px;
-        line-height: 1.05;
-    }
-
-    @media (max-width: $mobile) {
-        max-width: 11ch;
-        font-size: 42px;
-        line-height: 1.04;
-    }
+    max-width: 700px;
+    font-size: 68px;
 }
 
 .hero-copy {
-    max-width: 40ch;
-    font-size: 18.4px;
-    font-weight: 500;
-    line-height: 1.45;
-    margin-top: 30.4px !important;
-    margin-bottom: 30.4px !important;
-
-    @media (max-width: $tablet) {
-        max-width: 36ch;
-        font-size: 17px;
-        margin-top: 24px !important;
-        margin-bottom: 24px !important;
-    }
-
-    @media (max-width: $mobile) {
-        max-width: 31ch;
-        font-size: 16px;
-        margin-top: 20px !important;
-        margin-bottom: 20px !important;
-    }
+    max-width: 75%;
+    font-size: 18px;
 }
 
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 24px;
-
-    @media (max-width: $mobile) {
-        gap: 12px;
-        margin-top: 20px;
-    }
-
-    .btn {
-        font-size: 16px;
-        padding: 8px 22px !important;
-        white-space: nowrap;
-
-        @media (max-width: $mobile) {
-            font-size: 14px;
-            padding: 7px 16px !important;
-        }
-    }
+.hero-overlay .btn {
+    font-size: 1rem;
 }
 
 .brand-logo {
     max-height: 32px;
     width: auto;
-
-    @media (max-width: $tablet) {
-        max-height: 28px;
-    }
-
-    @media (max-width: $mobile) {
-        max-height: 24px;
-    }
-}
-
-.brand-row {
-    @media (max-width: $mobile) {
-        --bs-columns: 1;
-
-        > * {
-            flex: 0 0 auto;
-            width: 100%;
-        }
-    }
 }
 
 .cards-wide-gap {
-    --bs-gutter-x: 80px;
-
-    @media (max-width: $tablet) {
-        --bs-gutter-x: 32px;
-    }
-
-    @media (max-width: $mobile) {
-        --bs-gutter-x: 24px;
-    }
+    --bs-gutter-x: 5rem;
 }
 
 .sectionHQ {
-    &__bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    &__inner {
-        position: relative;
-        z-index: 1;
-        padding-bottom: 80px;
-
-        @media (max-width: $tablet) {
-            padding-bottom: 64px;
-        }
-
-        @media (max-width: $mobile) {
-            padding-bottom: 48px;
-        }
-    }
-
     &__title {
         font-family: $font-serif;
-
-        @media (max-width: $tablet) {
-            font-size: 38px;
-        }
-
-        @media (max-width: $mobile) {
-            font-size: 32px;
-        }
     }
 
     &__casecoach {
@@ -273,71 +77,12 @@ $mobile          : 767.98px;
         font-weight: 400;
         max-width: 900px;
         margin-inline: auto;
-
-        @media (max-width: $tablet) {
-            max-width: 760px;
-            font-size: 36px;
-        }
-
-        @media (max-width: $mobile) {
-            font-size: 28px;
-        }
-    }
-
-    &__preview {
-        max-width: 70vw;
-
-        @media (max-width: $tablet) {
-            max-width: 82vw;
-        }
-
-        @media (max-width: $mobile) {
-            max-width: 92vw;
-        }
     }
 }
 
 .speechbubble {
-    width: 320px;
-    position: absolute;
-    top: 44%;
-    right: 20%;
-    transform: translateY(-50%);
-
-    @media (max-width: $tablet) {
-        width: 240px;
-        right: 12%;
-    }
-
-    @media (max-width: $mobile) {
-        display: none;
-    }
-
-    &__text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        text-align: center;
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 1.08;
-        margin: 0;
-
-        @media (max-width: $tablet) {
-            font-size: 30px;
-        }
-    }
-}
-
-.section-divider {
-    width: 256px;
-    transform: translateY(-10px);
-
-    @media (max-width: $mobile) {
-        width: 192px;
-    }
+    width: clamp(180px, 22vw, 320px);
+    position: relative;
 }
 
 .carousel-indicators {
@@ -361,20 +106,12 @@ $mobile          : 767.98px;
 }
 
 .faq-title {
-    color: #ffbf00;
+    color: #F3B30E;
     letter-spacing: 0.01em;
     font-family: "Poppins", sans-serif;
     font-weight: 500 !important;
     font-size: 120px;
     line-height: 1;
-
-    @media (max-width: $tablet) {
-        font-size: 82px;
-    }
-
-    @media (max-width: $mobile) {
-        font-size: 58px;
-    }
 }
 
 .faq-accordion {
@@ -390,28 +127,18 @@ $mobile          : 767.98px;
 
     .accordion-button {
         background: transparent;
-        color: #f8f9fa;
         box-shadow: none;
-        padding: 32px 16px;
+        padding: 2rem 1rem;
         font-family: "Poppins", sans-serif !important;
         font-size: 22px !important;
         font-weight: 400 !important;
-
-        @media (max-width: $tablet) {
-            padding: 24px 0;
-            font-size: 20px !important;
-        }
-
-        @media (max-width: $mobile) {
-            font-size: 18px !important;
-        }
     }
 
     .accordion-button::after {
         background-image: none;
         content: "+";
         color: #ffffff;
-        font-size: 35.2px;
+        font-size: 36px;
         width: auto;
         height: auto;
         transform: none;
@@ -419,7 +146,7 @@ $mobile          : 767.98px;
     }
 
     .accordion-button:not(.collapsed)::after {
-        content: "x";
+        content: "×";
     }
 
     .accordion-button:not(.collapsed) {
@@ -433,18 +160,8 @@ $mobile          : 767.98px;
         font-size: 18px !important;
         font-weight: 400 !important;
         line-height: 1.35;
-        padding: 0 16px 35.2px;
+        padding: 0 1rem 36px;
         max-width: 90%;
-
-        @media (max-width: $tablet) {
-            max-width: 100%;
-            padding: 0 0 28px;
-            font-size: 17px !important;
-        }
-
-        @media (max-width: $mobile) {
-            font-size: 16px !important;
-        }
     }
 }
 
@@ -458,10 +175,6 @@ $mobile          : 767.98px;
     font-size: 22px !important;
     font-weight: 400 !important;
     color: #ffffff;
-
-    @media (max-width: $tablet) {
-        font-size: 20px !important;
-    }
 }
 
 .footer-desc {
@@ -470,14 +183,6 @@ $mobile          : 767.98px;
     font-weight: 400 !important;
     line-height: 1.35;
     color: #d5d9e2;
-
-    @media (max-width: $tablet) {
-        font-size: 16px !important;
-    }
-
-    @media (max-width: $mobile) {
-        font-size: 14px !important;
-    }
 }
 
 .footer-heading {
@@ -486,10 +191,6 @@ $mobile          : 767.98px;
     font-weight: 400 !important;
     letter-spacing: 0.04em;
     color: #909090;
-
-    @media (max-width: $mobile) {
-        font-size: 12px !important;
-    }
 }
 
 .footer-link {
@@ -498,14 +199,6 @@ $mobile          : 767.98px;
     text-decoration: none;
     font-size: 16px !important;
     font-weight: 400 !important;
-
-    @media (max-width: $tablet) {
-        font-size: 15px !important;
-    }
-
-    @media (max-width: $mobile) {
-        font-size: 14px !important;
-    }
 }
 
 .footer-link:hover {
@@ -517,16 +210,63 @@ $mobile          : 767.98px;
     color: #8b92a3;
     font-size: 18px !important;
     font-weight: 400 !important;
-
-    @media (max-width: $tablet) {
-        font-size: 16px !important;
-    }
-
-    @media (max-width: $mobile) {
-        font-size: 14px !important;
-    }
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+
+@media (max-width: 975) {
+    .hero-image {
+        transform: scale(1.25);
+        width: 100%;
+        object-fit: cover;
+        object-position: left center;
+    }
+
+    .hero-overlay {
+        width: 100%;
+    }
+
+    .hero-copy {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-overlay .btn {
+        font-size: 14px;
+        padding: 6px 14px !important;
+    }
+
+    .cards-wide-gap {
+        --bs-gutter-x: 3rem;
+    }
+
+    .faq-accordion .accordion-button {
+        padding: 22px 0;
+    }
+
+    .faq-accordion .accordion-body {
+        max-width: 100%;
+        padding: 0 0 26px;
+    }
+}
+
+@media (max-width: 375) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-copy {
+        font-size: 16px;
+    }
+
+    .hero-overlay .btn {
+        font-size: 14px;
+    }
 }
